@@ -1,0 +1,38 @@
+//------------------
+//file:key_debounce
+//author:hzt
+//------------------
+module key_debounce(
+		input 		sys_clk,
+		input 		rst_n,
+		input 		key,		//before debounce
+		
+		output 		key_flag,	//press flag
+		output 		key_value	//after debounce
+);
+
+//reg define
+reg [31:0] delay_cnt;
+reg 			key_reg;
+
+
+always@(posedge sys_clk or negedge rst_n)
+begin
+	if(!rst_n)
+		begin
+			key_reg <= 1'b1;
+			delay_cnt <= 32'b0;
+		end
+	else 
+		begin
+			key_reg <= key;		//把按键此时的值赋给key_reg
+			if(key_reg != key)	//判断按键值是否改变
+				delay_cnt <= 32'd1000000;		//计数器重装值
+				
+		
+		end
+		
+end
+
+
+endmodule 

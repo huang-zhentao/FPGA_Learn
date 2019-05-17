@@ -1,0 +1,19 @@
+//------------------
+//file:顶层模块
+//author:hzt
+//------------------
+module key_beep(
+		input 		sys_clk,
+		input 		rst_n,
+		input 		key,
+		
+		output 		beep
+);
+
+wire key_value;
+wire key_flag;
+
+
+
+
+endmodule

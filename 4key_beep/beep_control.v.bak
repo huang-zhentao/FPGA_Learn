@@ -1,0 +1,15 @@
+//------------------
+//file:beep_control
+//author:hzt
+//------------------
+module beep_control(
+		input 		sys_clk,
+		input 		rst_n,
+		input 		key_flag,
+		input 		key_value,
+		
+		output reg 	beep
+);
+
+
+endmodule 
